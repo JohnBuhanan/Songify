@@ -1,25 +1,25 @@
 [versions]
 agp = "9.0.1"
-circuit = "0.22.2"
+circuit = "0.26.0"
 coil = "2.5.0"
 compileSdk = "36"
 composeBom = "2026.01.00"
-coroutines = "1.8.1"
+coroutines = "1.10.2"
 dagger = "2.59"
 desugarJdkLibs = "2.0.4"
-detekt = "1.23.1"
+detekt = "1.23.8"
 kotlin = "2.3.10"
 kspPlugin = "2.3.5"
 material3 = "1.2.1"
 minSdk = "28"
-moshi = "1.15.0"
+moshi = "1.15.2"
 orchestrator = "1.5.2"
-retrofit = "2.11.0"
+retrofit = "2.12.0"
 paging = "3.3.0"
 targetSdk = "33"
 
 [libraries]
-accompanist = { module = "com.google.accompanist:accompanist-placeholder-material", version = "0.13.0" }
+accompanist = { module = "com.google.accompanist:accompanist-placeholder-material", version = "0.37.3" }
 affectedModuleDetector = { module = "com.dropbox.affectedmoduledetector:affectedmoduledetector", version = "0.3.1" }
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
