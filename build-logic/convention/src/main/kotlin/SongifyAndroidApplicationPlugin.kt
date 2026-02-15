@@ -20,7 +20,6 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyOnce<AppPlugin>()
-            applyOnce("kotlin-android")
 
             androidApplication()
             allProjects()

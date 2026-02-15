@@ -4,7 +4,12 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
 fun Project.androidTest() {
-    android {
+    androidLibrary {
+        defaultConfig {
+            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        }
+    }
+    androidApplication {
         defaultConfig {
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }

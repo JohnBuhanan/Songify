@@ -25,7 +25,6 @@ class SongifyAndroidLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyOnce<LibraryPlugin>()
-            applyOnce("kotlin-android")
 
             androidLibrary()
             allProjects()
