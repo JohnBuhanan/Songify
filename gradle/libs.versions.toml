@@ -2,8 +2,8 @@
 agp = "9.0.1"
 circuit = "0.22.2"
 coil = "2.5.0"
-compileSdk = "34"
-compose = "1.7.0-beta03"
+compileSdk = "36"
+composeBom = "2026.01.00"
 coroutines = "1.8.1"
 dagger = "2.59"
 desugarJdkLibs = "2.0.4"
@@ -24,15 +24,16 @@ affectedModuleDetector = { module = "com.dropbox.affectedmoduledetector:affected
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
 androidx-compose-constraint-layout = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
-androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
-androidx-compose-foundation-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "compose" }
-androidx-compose-material = { module = "androidx.compose.material3:material3", version.ref = "material3" }
-androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
-androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
-androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
-androidx-compose-ui-test-junit4-android = { module = "androidx.compose.ui:ui-test-junit4-android", version.ref = "compose" }
-androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
-androidx-compose-uitooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout" }
+androidx-compose-material = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-test-junit4-android = { group = "androidx.compose.ui", name = "ui-test-junit4-android" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-uitooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-paging-common-android = { group = "androidx.paging", name = "paging-common-android", version.ref = "paging" }
 androidx-paging-compose-android = { group = "androidx.paging", name = "paging-compose-android", version.ref = "paging" }
 androidx-palette-ktx = { group = "androidx.palette", name = "palette-ktx", version = "1.0.0" }

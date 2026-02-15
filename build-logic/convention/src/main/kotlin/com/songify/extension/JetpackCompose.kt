@@ -8,6 +8,7 @@ fun Project.jetpackCompose() {
     applyOnce<ComposeCompilerGradleSubplugin>()
 
     dependencies {
+        "implementation"(platform(libs.androidx.compose.bom))
         "implementation"(libs.bundles.compose)
     }
 
