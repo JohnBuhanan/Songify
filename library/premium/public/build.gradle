@@ -1,3 +1,7 @@
 plugins {
     id 'songify.kotlin.library'
 }
+
+dependencies {
+    implementation libs.androidx.compose.ui
+}

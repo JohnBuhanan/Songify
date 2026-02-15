@@ -23,6 +23,7 @@ class SongifyKotlinLibraryPlugin : Plugin<Project> {
 
             detekt()
             circuitRuntime()
+            composeBom()
 
             extensions.create("songify", SongifyKotlinLibraryExtension::class.java, this)
         }
@@ -31,6 +32,12 @@ class SongifyKotlinLibraryPlugin : Plugin<Project> {
     private fun Project.circuitRuntime() {
         dependencies {
             "implementation"(libs.circuitRuntime)
+        }
+    }
+
+    private fun Project.composeBom() {
+        dependencies {
+            "implementation"(platform(libs.androidx.compose.bom))
         }
     }
 }

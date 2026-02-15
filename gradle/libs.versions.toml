@@ -10,7 +10,6 @@ desugarJdkLibs = "2.0.4"
 detekt = "1.23.8"
 kotlin = "2.3.10"
 kspPlugin = "2.3.5"
-material3 = "1.2.1"
 minSdk = "28"
 moshi = "1.15.2"
 orchestrator = "1.5.2"
@@ -19,7 +18,7 @@ paging = "3.3.0"
 targetSdk = "33"
 
 [libraries]
-accompanist = { module = "com.google.accompanist:accompanist-placeholder-material", version = "0.37.3" }
+accompanist = { module = "com.google.accompanist:accompanist-placeholder-material", version = "0.36.0" }
 affectedModuleDetector = { module = "com.dropbox.affectedmoduledetector:affectedmoduledetector", version = "0.3.1" }
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
@@ -53,7 +52,6 @@ core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
 detekt-cli = { module = "io.gitlab.arturbosch.detekt:detekt-cli", version.ref = "detekt" }
 detektGradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 develocityPlugin = { module = "com.gradle:develocity-gradle-plugin", version = "3.17.4" }
-focusPlugin = { module = "com.dropbox.focus:com.dropbox.focus.gradle.plugin", version = "0.6.0" }
 graphAssert = { module = "com.jraska.module.graph.assertion:com.jraska.module.graph.assertion.gradle.plugin", version = "2.5.0" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "dagger" }
