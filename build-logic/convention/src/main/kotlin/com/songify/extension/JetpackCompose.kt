@@ -11,10 +11,7 @@ fun Project.jetpackCompose() {
         "implementation"(libs.bundles.compose)
     }
 
-    androidLibrary {
-        buildFeatures.compose = true
-    }
-    androidApplication {
+    android {
         buildFeatures.compose = true
     }
 }

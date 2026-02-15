@@ -4,10 +4,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
 fun Project.test() {
-    androidLibrary {
-        testOptions.unitTests.isIncludeAndroidResources = true
-    }
-    androidApplication {
+    android {
         testOptions.unitTests.isIncludeAndroidResources = true
     }
 
