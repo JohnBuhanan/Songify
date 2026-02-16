@@ -13,6 +13,7 @@ import com.songify.extension.libs
 import com.songify.extension.metro
 import com.songify.extension.moduleNameFix
 import com.songify.extension.moshi
+import com.songify.extension.platform
 import com.songify.extension.parcelize
 import com.songify.extension.retrofit
 import com.songify.extension.test
@@ -35,6 +36,7 @@ class SongifyAndroidLibraryPlugin : Plugin<Project> {
             gradleDependenciesSorter()
             dynamicNamespace()
             coroutines()
+            platform()
 
             dependencies {
                 "implementation"(libs.timber)

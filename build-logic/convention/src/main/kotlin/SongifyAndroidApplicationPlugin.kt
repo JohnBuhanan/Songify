@@ -11,6 +11,7 @@ import com.songify.extension.libs
 import com.songify.extension.metro
 import com.songify.extension.moduleNameFix
 import com.songify.extension.moshi
+import com.songify.extension.platform
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -32,6 +33,7 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
             metro()
             moshi()
             jetpackCompose()
+            platform()
 
             dependencies {
                 "implementation"(libs.timber)

@@ -4,6 +4,7 @@ import com.songify.extension.gradleDependenciesSorter
 import com.songify.extension.kotlinLibrary
 import com.songify.extension.libs
 import com.songify.extension.moshi
+import com.songify.extension.platform
 import com.songify.extension.retrofit
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -19,6 +20,7 @@ class SongifyKotlinLibraryPlugin : Plugin<Project> {
             gradleDependenciesSorter()
 
             detekt()
+            platform()
             circuitRuntime()
             composeBom()
 
