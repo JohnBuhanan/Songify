@@ -3,11 +3,9 @@ package com.songify.extension
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
-import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 fun Project.androidLibrary() {
@@ -16,11 +14,6 @@ fun Project.androidLibrary() {
 
         defaultConfig {
             minSdk = libs.versions.minSdk.get().toInt()
-        }
-
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_21
-            targetCompatibility = JavaVersion.VERSION_21
         }
 
         sourceSets {
@@ -33,10 +26,8 @@ fun Project.androidLibrary() {
         }
     }
 
-    // Apply common Kotlin options
     tasks.withType<KotlinCompile>().configureEach {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_21)
             freeCompilerArgs.addAll(
                 "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
                 "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",

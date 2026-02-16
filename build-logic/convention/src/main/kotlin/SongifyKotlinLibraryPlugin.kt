@@ -1,7 +1,6 @@
 import com.songify.extension.applyOnce
 import com.songify.extension.detekt
 import com.songify.extension.gradleDependenciesSorter
-import com.songify.extension.kotlinJvm
 import com.songify.extension.kotlinLibrary
 import com.songify.extension.libs
 import com.songify.extension.moshi
@@ -14,9 +13,9 @@ class SongifyKotlinLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyOnce("kotlin")
+            apply { from("${rootDir}/build-logic/kotlin.gradle") }
 
             kotlinLibrary()
-            kotlinJvm()
             gradleDependenciesSorter()
 
             detekt()

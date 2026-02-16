@@ -19,6 +19,7 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyOnce<AppPlugin>()
+            apply { from("${rootDir}/build-logic/kotlin.gradle") }
 
             androidApplication()
             dynamicNamespace()

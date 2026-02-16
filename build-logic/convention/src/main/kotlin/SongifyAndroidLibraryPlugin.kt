@@ -24,6 +24,7 @@ class SongifyAndroidLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyOnce<LibraryPlugin>()
+            apply { from("${rootDir}/build-logic/kotlin.gradle") }
 
             androidLibrary()
             moduleNameFix()
