@@ -1,4 +1,4 @@
-package com.songify.feature.premium.app.di
+package com.songify.feature.detail.app.di
 
 import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.detail.DetailScreen

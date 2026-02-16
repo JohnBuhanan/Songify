@@ -1,7 +1,7 @@
-package com.songify.library.genre.internal.di
+package com.songify.library.search.internal.di
 
-import com.songify.library.genre.internal.usecase.GetGenresImpl
-import com.songify.library.genre.usecase.GetGenres
+import com.songify.library.search.internal.usecase.GetGenresImpl
+import com.songify.library.search.usecase.GetGenres
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Binds
 import dev.zacsweers.metro.ContributesTo

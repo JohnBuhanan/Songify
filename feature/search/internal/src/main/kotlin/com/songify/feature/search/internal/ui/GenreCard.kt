@@ -20,7 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.songify.library.genre.Genre
+import com.songify.library.search.Genre
 
 @Composable
 internal fun GenreCard(

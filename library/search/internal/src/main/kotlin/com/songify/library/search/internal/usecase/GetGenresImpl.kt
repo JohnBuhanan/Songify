@@ -1,8 +1,8 @@
-package com.songify.library.genre.internal.usecase
+package com.songify.library.search.internal.usecase
 
 import androidx.compose.ui.graphics.Color
-import com.songify.library.genre.Genre
-import com.songify.library.genre.usecase.GetGenres
+import com.songify.library.search.Genre
+import com.songify.library.search.usecase.GetGenres
 import com.songify.library.search.internal.R
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.AppScope

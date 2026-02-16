@@ -1,4 +1,4 @@
-package com.songify.library.genre
+package com.songify.library.search
 
 import androidx.annotation.DrawableRes
 import androidx.compose.ui.graphics.Color

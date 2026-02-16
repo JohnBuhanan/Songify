@@ -1,4 +1,4 @@
-package com.songify.feature.home.app.di
+package com.songify.feature.nowplaying.app.di
 
 import androidx.paging.PagingData
 import com.slack.circuit.runtime.screen.Screen

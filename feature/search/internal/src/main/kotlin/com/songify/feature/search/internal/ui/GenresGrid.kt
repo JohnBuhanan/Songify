@@ -17,7 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.songify.library.genre.Genre
+import com.songify.library.search.Genre
 
 @Composable
 internal fun GenresGrid(
