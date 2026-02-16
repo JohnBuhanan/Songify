@@ -1,5 +1,5 @@
 plugins {
-    id 'songify.android.application'
+    id "songify.android.application"
 }
 
 dependencies {

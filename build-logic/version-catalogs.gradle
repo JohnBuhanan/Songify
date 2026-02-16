@@ -1,0 +1,11 @@
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            // "libs" is only automatically created for the root settings/projects.
+            // We must manually create it for our included builds like ":build-logic"
+            if (settings.rootProject.name == 'build-logic') {
+                from(files('../gradle/libs.versions.toml'))
+            }
+        }
+    }
+}

@@ -1,19 +1,11 @@
 plugins {
-    id 'songify.android.library'
+    id "songify.android.library"
 }
 
 songify {
     jetpackCompose()
 }
 
-
 dependencies {
     api libs.metro.runtime
-
-//    implementation(libs.androidx.activity.compose)
-//    implementation(libs.androidx.lifecycle.viewModelCompose)
-//    implementation(libs.androidx.core.ktx)
-//    implementation(libs.androidx.work.ktx)
-//    implementation(libs.hilt.android)
-//    implementation(libs.kotlin.reflect)
 }

@@ -1,5 +1,5 @@
 plugins {
-    id 'songify.kotlin.library'
+    id "songify.kotlin.library"
 }
 
 dependencies {

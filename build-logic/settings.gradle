@@ -1,0 +1,14 @@
+pluginManagement {
+    apply(from: "repositories.gradle")
+}
+
+plugins {
+    id "com.gradle.develocity" version "4.1.1" // Keep version in sync with build.libs.versions.toml
+}
+apply(from: "develocity.gradle")
+
+apply(from: "version-catalogs.gradle")
+
+rootProject.name = "build-logic"
+
+include(":convention")

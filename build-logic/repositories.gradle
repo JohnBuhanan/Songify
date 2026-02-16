@@ -1,0 +1,26 @@
+void configureRepositories(target) {
+    target.repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        google()
+    }
+}
+
+def isSettingsContext() {
+    try {
+        this.pluginManagement
+        this.dependencyResolutionManagement
+        return true
+    } catch (MissingPropertyException ignored) {
+        return false
+    }
+}
+
+if (isSettingsContext()) {
+    logger.lifecycle("repositories.gradle - Detected Settings context")
+    configureRepositories(this.pluginManagement)
+    configureRepositories(this.dependencyResolutionManagement)
+    return
+}
+
+throw new GradleException("Unable to determine script context. Supported contexts are 'Settings'")
