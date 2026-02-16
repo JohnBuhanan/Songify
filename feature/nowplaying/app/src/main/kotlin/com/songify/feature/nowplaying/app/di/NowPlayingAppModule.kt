@@ -1,59 +1,26 @@
 package com.songify.feature.nowplaying.app.di
 
-import androidx.paging.PagingData
 import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.nowplaying.NowPlayingScreen
-import com.songify.library.home.model.HomeFeed
-import com.songify.library.home.model.HomeFeedCarousel
-import com.songify.library.home.usecase.GetHomeFeed
-import com.songify.library.spotify.model.SpotifyModel.Playlist
+import com.songify.library.spotify.model.SpotifyModel.Track
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
-import kotlinx.coroutines.flow.flowOf
+
+private val track = Track(
+    id = "3n3Ppam7vgaVa1iaRUc9Lp",
+    caption = "THE TORTURED POETS DEPARTMENT",
+    imageUrlString = "https://i.scdn.co/image/ab67616d00001e025076e4160d018e378f488c33",
+    artistsString = "Taylor Swift",
+    trackUrlString = "https://i.scdn.co/image/ab67616d00001e025076e4160d018e378f488c33",
+)
 
 @ContributesTo(AppScope::class)
 interface NowPlayingAppModule {
     companion object {
         @SingleIn(AppScope::class)
         @Provides
-        fun providesNowPlayingStartScreen(): Screen = NowPlayingScreen
-
-        @Provides
-        fun providesNowPlayingGetHomeFeed(): GetHomeFeed = object : GetHomeFeed {
-            override suspend fun invoke(): Result<HomeFeed> {
-                return Result.success(
-                    HomeFeed(
-                        listOf(
-                            HomeFeedCarousel(
-                                "1", "Thing", flowOf(
-                                    PagingData.from(
-                                        listOf(
-                                            Playlist(
-                                                "1a",
-                                                "caption",
-                                                null,
-                                                "name",
-                                                "ownerName",
-                                                "totalNumberOfTracks"
-                                            ),
-                                            Playlist(
-                                                "1b",
-                                                "caption",
-                                                null,
-                                                "name",
-                                                "ownerName",
-                                                "totalNumberOfTracks"
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-            }
-        }
+        fun providesNowPlayingStartScreen(): Screen = NowPlayingScreen(track)
     }
 }
