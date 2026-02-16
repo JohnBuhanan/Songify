@@ -13,9 +13,9 @@ import com.songify.feature.detail.DetailScreen
 import com.songify.library.composeextensions.rememberRetainedCachedPagingFlow
 import com.songify.library.loading.LoadingBar
 import com.songify.library.spotify.model.SpotifyModel
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
 
-@CircuitInject(DetailScreen::class, SingletonComponent::class)
+@CircuitInject(DetailScreen::class, AppScope::class)
 @Composable
 fun DetailView(
     state: DetailState,

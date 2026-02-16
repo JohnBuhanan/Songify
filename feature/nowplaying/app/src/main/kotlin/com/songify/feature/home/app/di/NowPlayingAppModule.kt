@@ -7,21 +7,21 @@ import com.songify.library.home.model.HomeFeed
 import com.songify.library.home.model.HomeFeedCarousel
 import com.songify.library.home.usecase.GetHomeFeed
 import com.songify.library.spotify.model.SpotifyModel.Playlist
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Provides
+import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.flow.flowOf
 
-@Module
-@InstallIn(SingletonComponent::class)
-interface HomeAppModule {
+@ContributesTo(AppScope::class)
+interface NowPlayingAppModule {
     companion object {
+        @SingleIn(AppScope::class)
         @Provides
-        fun providesStartScreen(): Screen = NowPlayingScreen
+        fun providesNowPlayingStartScreen(): Screen = NowPlayingScreen
 
         @Provides
-        fun providesGetHomeFeed(): GetHomeFeed = object : GetHomeFeed {
+        fun providesNowPlayingGetHomeFeed(): GetHomeFeed = object : GetHomeFeed {
             override suspend fun invoke(): Result<HomeFeed> {
                 return Result.success(
                     HomeFeed(

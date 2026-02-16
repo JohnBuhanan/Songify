@@ -6,15 +6,16 @@ import androidx.compose.runtime.produceState
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
-import com.songify.feature.nowplaying.NowPlayingScreen
 import com.songify.feature.detail.DetailScreen
+import com.songify.feature.nowplaying.NowPlayingScreen
 import com.songify.library.detail.usecase.GetTracks
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Assisted
+import dev.zacsweers.metro.AssistedFactory
+import dev.zacsweers.metro.AssistedInject
 
-class DetailPresenter @AssistedInject constructor(
+@AssistedInject
+class DetailPresenter(
     private val getTracks: GetTracks,
     @Assisted private val detailScreen: DetailScreen,
     @Assisted private val navigator: Navigator,
@@ -38,7 +39,7 @@ class DetailPresenter @AssistedInject constructor(
         return state
     }
 
-    @CircuitInject(DetailScreen::class, SingletonComponent::class)
+    @CircuitInject(DetailScreen::class, AppScope::class)
     @AssistedFactory
     interface Factory {
         fun create(detailScreen: DetailScreen, navigator: Navigator): DetailPresenter

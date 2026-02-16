@@ -2,20 +2,22 @@ package com.songify.library.coroutines.di
 
 import com.songify.library.coroutines.IODispatcher
 import com.songify.library.coroutines.MainDispatcher
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Provides
+import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import javax.inject.Singleton
 
-@InstallIn(SingletonComponent::class)
-@Module
-class CoroutinesModule {
-    @[Provides Singleton IODispatcher]
-    fun providesIODispatcher(): CoroutineDispatcher = Dispatchers.IO
+@ContributesTo(AppScope::class)
+interface CoroutinesModule {
+    companion object {
+        @SingleIn(AppScope::class)
+        @[Provides IODispatcher]
+        fun providesIODispatcher(): CoroutineDispatcher = Dispatchers.IO
 
-    @[Provides Singleton MainDispatcher]
-    fun providesMainDispatcher(): CoroutineDispatcher = Dispatchers.Main
+        @SingleIn(AppScope::class)
+        @[Provides MainDispatcher]
+        fun providesMainDispatcher(): CoroutineDispatcher = Dispatchers.Main
+    }
 }

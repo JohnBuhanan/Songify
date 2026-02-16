@@ -28,6 +28,7 @@
 :library:home:internal
 :library:home:public
 :library:loading:public
+:library:metro:public
 :library:premium:internal
 :library:premium:public
 :library:retrofit:public

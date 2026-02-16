@@ -5,12 +5,13 @@ import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 import com.songify.feature.nowplaying.NowPlayingScreen
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Assisted
+import dev.zacsweers.metro.AssistedFactory
+import dev.zacsweers.metro.AssistedInject
 
-class NowPlayingPresenter @AssistedInject constructor(
+@AssistedInject
+class NowPlayingPresenter(
     @Assisted private val nowPlayingScreen: NowPlayingScreen,
     @Assisted private val navigator: Navigator,
 ) : Presenter<NowPlayingState> {
@@ -26,7 +27,7 @@ class NowPlayingPresenter @AssistedInject constructor(
         )
     }
 
-    @CircuitInject(NowPlayingScreen::class, SingletonComponent::class)
+    @CircuitInject(NowPlayingScreen::class, AppScope::class)
     @AssistedFactory
     interface Factory {
         fun create(nowPlayingScreen: NowPlayingScreen, navigator: Navigator): NowPlayingPresenter

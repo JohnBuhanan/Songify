@@ -22,7 +22,7 @@ import com.songify.library.composeextensions.rememberRetainedCachedPagingFlow
 import com.songify.library.home.model.HomeFeed
 import com.songify.library.home.model.HomeFeedCarousel
 import com.songify.library.loading.LoadingBar
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
 
 internal object HomeConstants {
     const val HOME_TAG = "home"
@@ -30,7 +30,7 @@ internal object HomeConstants {
     const val CARD_TAG = "card"
 }
 
-@CircuitInject(HomeScreen::class, SingletonComponent::class)
+@CircuitInject(HomeScreen::class, AppScope::class)
 @Composable
 fun HomeView(
     state: HomeState,

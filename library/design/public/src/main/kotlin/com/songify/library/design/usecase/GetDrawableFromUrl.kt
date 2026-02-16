@@ -8,9 +8,9 @@ import coil.request.ErrorResult
 import coil.request.ImageRequest
 import coil.request.SuccessResult
 import com.songify.library.coroutines.IODispatcher
+import dev.zacsweers.metro.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 class GetDrawableFromUrl @Inject constructor(
     @IODispatcher private val ioDispatcher: CoroutineDispatcher

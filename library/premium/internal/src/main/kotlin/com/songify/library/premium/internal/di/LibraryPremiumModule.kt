@@ -2,13 +2,11 @@ package com.songify.library.premium.internal.di
 
 import com.songify.library.premium.internal.usecase.GetPremiumPlansImpl
 import com.songify.library.premium.usecase.GetPremiumPlans
-import dagger.Binds
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Binds
+import dev.zacsweers.metro.ContributesTo
 
-@Module
-@InstallIn(SingletonComponent::class)
+@ContributesTo(AppScope::class)
 interface LibraryPremiumModule {
     @Binds
     fun bindsGetPremiumPlans(impl: GetPremiumPlansImpl): GetPremiumPlans

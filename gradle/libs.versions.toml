@@ -1,15 +1,15 @@
 [versions]
 agp = "9.0.1"
-circuit = "0.26.0"
+circuit = "0.32.0"
 coil = "2.5.0"
 compileSdk = "36"
 composeBom = "2026.01.00"
 coroutines = "1.10.2"
-dagger = "2.59"
 desugarJdkLibs = "2.0.4"
 detekt = "1.23.8"
 kotlin = "2.3.10"
 kspPlugin = "2.3.5"
+metro = "0.10.2"
 minSdk = "28"
 moshi = "1.15.2"
 orchestrator = "1.5.2"
@@ -53,15 +53,14 @@ detekt-cli = { module = "io.gitlab.arturbosch.detekt:detekt-cli", version.ref = 
 detektGradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 develocityPlugin = { module = "com.gradle:develocity-gradle-plugin", version = "3.17.4" }
 graphAssert = { module = "com.jraska.module.graph.assertion:com.jraska.module.graph.assertion.gradle.plugin", version = "2.5.0" }
-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "dagger" }
-hilt-androidCompiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger" }
 junit4 = "junit:junit:4.13.2"
 kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kspGradlePlugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "kspPlugin" }
+metro-gradle-plugin = { module = "dev.zacsweers.metro:dev.zacsweers.metro.gradle.plugin", version.ref = "metro" }
+metro-runtime = { module = "dev.zacsweers.metro:runtime", version.ref = "metro" }
 material = "com.google.android.material:material:1.12.0"
 moduleGraph = { module = "dev.iurysouza.modulegraph:dev.iurysouza.modulegraph.gradle.plugin", version = "0.10.0" }
 moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }

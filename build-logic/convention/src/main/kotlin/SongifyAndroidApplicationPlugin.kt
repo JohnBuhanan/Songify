@@ -1,5 +1,4 @@
 import com.android.build.gradle.AppPlugin
-import com.songify.extension.allProjects
 import com.songify.extension.androidApplication
 import com.songify.extension.applyOnce
 import com.songify.extension.circuit
@@ -7,9 +6,9 @@ import com.songify.extension.configureLint
 import com.songify.extension.detekt
 import com.songify.extension.dynamicNamespace
 import com.songify.extension.graphAssert
-import com.songify.extension.hilt
 import com.songify.extension.jetpackCompose
 import com.songify.extension.libs
+import com.songify.extension.metro
 import com.songify.extension.moduleNameFix
 import com.songify.extension.moshi
 import org.gradle.api.Plugin
@@ -22,7 +21,6 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
             applyOnce<AppPlugin>()
 
             androidApplication()
-            allProjects()
             dynamicNamespace()
             moduleNameFix()
             configureLint()
@@ -30,7 +28,7 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
             graphAssert()
             // checkstyle()
             circuit()
-            hilt()
+            metro()
             moshi()
             jetpackCompose()
 

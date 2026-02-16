@@ -1,6 +1,6 @@
 package com.songify.library.coroutines
 
-import javax.inject.Qualifier
+import dev.zacsweers.metro.Qualifier
 import kotlin.annotation.AnnotationRetention.RUNTIME
 
 @Qualifier

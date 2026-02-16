@@ -5,11 +5,13 @@ import com.songify.library.spotify.internal.SpotifyService
 import com.songify.library.spotify.internal.model.getTracks
 import com.songify.library.spotify.model.SpotifyModel
 import com.songify.library.spotify.usecase.GetTracksByAlbumId
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.SingleIn
 import retrofit2.HttpException
-import javax.inject.Inject
-import javax.inject.Singleton
+import java.io.IOException
 
-@Singleton
+@SingleIn(AppScope::class)
 class GetTracksByAlbumIdImpl @Inject constructor(
     private val songifySession: SongifySession,
     private val spotifyService: SpotifyService,
@@ -24,7 +26,7 @@ class GetTracksByAlbumIdImpl @Inject constructor(
             Result.success(tracks)
         } catch (httpException: HttpException) {
             Result.failure(httpException)
-        } catch (ioException: java.io.IOException) {
+        } catch (ioException: IOException) {
             Result.failure(ioException)
         }
 }

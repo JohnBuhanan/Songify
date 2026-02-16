@@ -1,9 +1,10 @@
 package com.songify.library.session
 
-import javax.inject.Inject
-import javax.inject.Singleton
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.SingleIn
 
-@Singleton
+@SingleIn(AppScope::class)
 class SongifySession @Inject constructor() {
     var accessToken: String? = null
 

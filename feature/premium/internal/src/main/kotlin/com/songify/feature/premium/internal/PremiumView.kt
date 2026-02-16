@@ -8,9 +8,9 @@ import com.slack.circuitx.effects.toastEffect
 import com.songify.feature.premium.PremiumScreen
 import com.songify.feature.premium.internal.ui.PremiumColumn
 import com.songify.library.loading.LoadingBar
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
 
-@CircuitInject(PremiumScreen::class, SingletonComponent::class)
+@CircuitInject(PremiumScreen::class, AppScope::class)
 @Composable
 fun PremiumView(
     state: PremiumState,

@@ -8,12 +8,13 @@ import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 import com.songify.feature.search.SearchScreen
 import com.songify.library.genre.usecase.GetGenres
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Assisted
+import dev.zacsweers.metro.AssistedFactory
+import dev.zacsweers.metro.AssistedInject
 
-class SearchPresenter @AssistedInject constructor(
+@AssistedInject
+class SearchPresenter(
     private val getGenres: GetGenres,
     @Assisted private val navigator: Navigator,
 ) : Presenter<SearchState> {
@@ -34,7 +35,7 @@ class SearchPresenter @AssistedInject constructor(
         return state
     }
 
-    @CircuitInject(SearchScreen::class, SingletonComponent::class)
+    @CircuitInject(SearchScreen::class, AppScope::class)
     @AssistedFactory
     interface Factory {
         fun create(navigator: Navigator): SearchPresenter

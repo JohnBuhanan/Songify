@@ -1,6 +1,7 @@
 package com.songify.app
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,15 +19,17 @@ import com.slack.circuit.foundation.NavigableCircuitContent
 import com.slack.circuit.foundation.rememberCircuitNavigator
 import com.songify.feature.login.LoginScreen
 import com.songify.library.bottomnavigation.SongifyBottomNavigation
+import com.songify.library.metro.ActivityKey
 import com.songify.library.theme.SongifyTheme
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.binding
 
-@AndroidEntryPoint
-class EntryPointActivity : ComponentActivity() {
-
-    @Inject
-    lateinit var circuit: Circuit
+@ContributesIntoMap(AppScope::class, binding = binding<Activity>())
+@ActivityKey(EntryPointActivity::class)
+@Inject
+class EntryPointActivity(val circuit: Circuit) : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -5,9 +5,9 @@ import androidx.compose.ui.Modifier
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.songify.feature.login.LoginScreen
 import com.songify.library.loading.LoadingBar
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
 
-@CircuitInject(LoginScreen::class, SingletonComponent::class)
+@CircuitInject(LoginScreen::class, AppScope::class)
 @Composable
 fun LoginView(
     state: LoginState,

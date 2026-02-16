@@ -8,11 +8,12 @@ import com.songify.library.spotify.internal.SpotifyService
 import com.songify.library.spotify.internal.paging.PlaylistsForCategoryPagingSource
 import com.songify.library.spotify.model.SpotifyModel
 import com.songify.library.spotify.usecase.GetPlaylistsForCategory
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@SingleIn(AppScope::class)
 class GetPlaylistsForCategoryImpl @Inject constructor(
     private val pagingConfig: PagingConfig,
     private val songifySession: SongifySession,

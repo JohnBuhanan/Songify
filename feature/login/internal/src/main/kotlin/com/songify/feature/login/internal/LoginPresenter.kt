@@ -21,12 +21,13 @@ import com.songify.library.session.SongifySession
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Assisted
+import dev.zacsweers.metro.AssistedFactory
+import dev.zacsweers.metro.AssistedInject
 
-class LoginPresenter @AssistedInject constructor(
+@AssistedInject
+class LoginPresenter(
     private val songifySession: SongifySession,
     @Assisted private val navigator: Navigator,
     private val afterLoginScreen: Screen,
@@ -63,7 +64,7 @@ class LoginPresenter @AssistedInject constructor(
         return LoginState.Loading
     }
 
-    @CircuitInject(LoginScreen::class, SingletonComponent::class)
+    @CircuitInject(LoginScreen::class, AppScope::class)
     @AssistedFactory
     interface Factory {
         fun create(navigator: Navigator): LoginPresenter

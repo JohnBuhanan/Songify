@@ -8,11 +8,12 @@ import com.songify.library.spotify.internal.SpotifyService
 import com.songify.library.spotify.internal.paging.PlaylistTracksPagingSource
 import com.songify.library.spotify.model.SpotifyModel.Track
 import com.songify.library.spotify.usecase.GetTracksByPlaylistId
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@SingleIn(AppScope::class)
 class GetTracksByPlaylistIdImpl @Inject constructor(
     private val pagingConfig: PagingConfig,
     private val songifySession: SongifySession,

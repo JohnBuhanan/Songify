@@ -15,18 +15,15 @@ import com.songify.library.spotify.usecase.GetNewReleases
 import com.songify.library.spotify.usecase.GetPlaylistsForCategory
 import com.songify.library.spotify.usecase.GetTracksByAlbumId
 import com.songify.library.spotify.usecase.GetTracksByPlaylistId
-import dagger.Binds
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Binds
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Provides
 import retrofit2.Retrofit
 import retrofit2.create
 
-@Module
-@InstallIn(SingletonComponent::class)
+@ContributesTo(AppScope::class)
 interface SpotifyModule {
-
     @Binds
     fun bindsGetCategoriesImpl(impl: GetCategoriesImpl): GetCategories
 

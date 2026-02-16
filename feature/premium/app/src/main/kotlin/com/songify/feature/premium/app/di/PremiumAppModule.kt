@@ -5,23 +5,23 @@ import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.premium.PremiumScreen
 import com.songify.library.premium.PremiumPlan
 import com.songify.library.premium.usecase.GetPremiumPlans
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Provides
+import dev.zacsweers.metro.SingleIn
 
-@Module
-@InstallIn(SingletonComponent::class)
 @Suppress("MagicNumber")
+private val miniStart = Color(0xFF4F99F4)
+private val miniEnd = Color(0xFF2F4ABC)
+private val individualStart = Color(0xFF045746)
+private val individualEnd = Color(0xFF16A96A)
+
+@ContributesTo(AppScope::class)
 interface PremiumAppModule {
     companion object {
-        val miniStart = Color(0xFF4F99F4)
-        val miniEnd = Color(0xFF2F4ABC)
-        val individualStart = Color(0xFF045746)
-        val individualEnd = Color(0xFF16A96A)
-
+        @SingleIn(AppScope::class)
         @Provides
-        fun providesStartScreen(): Screen = PremiumScreen
+        fun providesPremiumStartScreen(): Screen = PremiumScreen
 
         @Provides
         fun providesGetPremiumPlans(): GetPremiumPlans = object : GetPremiumPlans {

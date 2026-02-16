@@ -3,10 +3,11 @@ package com.songify.library.premium.internal.usecase
 import androidx.compose.ui.graphics.Color
 import com.songify.library.premium.PremiumPlan
 import com.songify.library.premium.usecase.GetPremiumPlans
-import javax.inject.Inject
-import javax.inject.Singleton
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.SingleIn
 
-@Singleton
+@SingleIn(AppScope::class)
 class GetPremiumPlansImpl @Inject constructor() : GetPremiumPlans {
     override suspend fun invoke(): List<PremiumPlan> = listOf(
         PremiumPlan(

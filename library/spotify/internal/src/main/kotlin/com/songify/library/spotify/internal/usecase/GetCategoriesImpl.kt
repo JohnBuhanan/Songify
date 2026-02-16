@@ -4,10 +4,11 @@ import com.songify.library.session.SongifySession
 import com.songify.library.spotify.internal.SpotifyService
 import com.songify.library.spotify.model.Category
 import com.songify.library.spotify.usecase.GetCategories
-import javax.inject.Inject
-import javax.inject.Singleton
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.SingleIn
 
-@Singleton
+@SingleIn(AppScope::class)
 class GetCategoriesImpl @Inject constructor(
     private val spotifyService: SpotifyService,
     private val songifySession: SongifySession,

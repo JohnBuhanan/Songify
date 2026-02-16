@@ -1,5 +1,4 @@
 import com.android.build.gradle.LibraryPlugin
-import com.songify.extension.allProjects
 import com.songify.extension.androidLibrary
 import com.songify.extension.androidTest
 import com.songify.extension.applyOnce
@@ -9,9 +8,9 @@ import com.songify.extension.coroutines
 import com.songify.extension.detekt
 import com.songify.extension.dynamicNamespace
 import com.songify.extension.gradleDependenciesSorter
-import com.songify.extension.hilt
 import com.songify.extension.jetpackCompose
 import com.songify.extension.libs
+import com.songify.extension.metro
 import com.songify.extension.moduleNameFix
 import com.songify.extension.moshi
 import com.songify.extension.parcelize
@@ -27,7 +26,6 @@ class SongifyAndroidLibraryPlugin : Plugin<Project> {
             applyOnce<LibraryPlugin>()
 
             androidLibrary()
-            allProjects()
             moduleNameFix()
 
             detekt()
@@ -49,7 +47,7 @@ class SongifyAndroidLibraryPlugin : Plugin<Project> {
 open class SongifyAndroidLibraryExtension(private val project: Project) {
     fun circuit() = project.circuit()
     fun coroutines() = project.coroutines()
-    fun hilt() = project.hilt()
+    fun hilt() = project.metro()
     fun jetpackCompose() = project.jetpackCompose()
     fun moshi() = project.moshi()
     fun parcelize() = project.parcelize()

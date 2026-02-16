@@ -2,16 +2,16 @@ package com.songify.feature.all.app.di
 
 import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.home.HomeScreen
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Provides
+import dev.zacsweers.metro.SingleIn
 
-@Module
-@InstallIn(SingletonComponent::class)
+@ContributesTo(AppScope::class)
 interface AllAppModule {
     companion object {
+        @SingleIn(AppScope::class)
         @Provides
-        fun providesStartScreen(): Screen = HomeScreen
+        fun providesAllStartScreen(): Screen = HomeScreen
     }
 }

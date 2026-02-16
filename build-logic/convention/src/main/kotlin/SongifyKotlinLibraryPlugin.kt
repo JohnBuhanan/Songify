@@ -1,4 +1,3 @@
-import com.songify.extension.allProjects
 import com.songify.extension.applyOnce
 import com.songify.extension.detekt
 import com.songify.extension.gradleDependenciesSorter
@@ -18,7 +17,6 @@ class SongifyKotlinLibraryPlugin : Plugin<Project> {
 
             kotlinLibrary()
             kotlinJvm()
-            allProjects()
             gradleDependenciesSorter()
 
             detekt()

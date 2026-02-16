@@ -6,11 +6,12 @@ import androidx.paging.PagingData
 import com.songify.library.spotify.internal.paging.NewReleasesPagingSource
 import com.songify.library.spotify.model.SpotifyModel
 import com.songify.library.spotify.usecase.GetNewReleases
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@SingleIn(AppScope::class)
 class GetNewReleasesImpl @Inject constructor(
     private val pagingConfig: PagingConfig,
     private val newReleasesPagingSource: NewReleasesPagingSource

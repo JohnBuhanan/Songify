@@ -8,12 +8,13 @@ import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 import com.songify.feature.premium.PremiumScreen
 import com.songify.library.premium.usecase.GetPremiumPlans
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Assisted
+import dev.zacsweers.metro.AssistedFactory
+import dev.zacsweers.metro.AssistedInject
 
-class PremiumPresenter @AssistedInject constructor(
+@AssistedInject
+class PremiumPresenter(
     private val getPremiumPlans: GetPremiumPlans,
     @Assisted private val navigator: Navigator,
 ) : Presenter<PremiumState> {
@@ -34,7 +35,7 @@ class PremiumPresenter @AssistedInject constructor(
         return state
     }
 
-    @CircuitInject(PremiumScreen::class, SingletonComponent::class)
+    @CircuitInject(PremiumScreen::class, AppScope::class)
     @AssistedFactory
     interface Factory {
         fun create(navigator: Navigator): PremiumPresenter

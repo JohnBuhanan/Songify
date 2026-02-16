@@ -8,12 +8,12 @@ import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuitx.effects.toastEffect
 import com.songify.feature.nowplaying.NowPlayingScreen
 import com.songify.library.loading.LoadingBar
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
 
 internal object NowPlayingConstants {
 }
 
-@CircuitInject(NowPlayingScreen::class, SingletonComponent::class)
+@CircuitInject(NowPlayingScreen::class, AppScope::class)
 @Composable
 fun NowPlayingView(
     state: NowPlayingState,

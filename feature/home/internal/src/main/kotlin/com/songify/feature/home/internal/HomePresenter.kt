@@ -6,15 +6,16 @@ import androidx.compose.runtime.produceState
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
-import com.songify.feature.home.HomeScreen
 import com.songify.feature.detail.DetailScreen
+import com.songify.feature.home.HomeScreen
 import com.songify.library.home.usecase.GetHomeFeed
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Assisted
+import dev.zacsweers.metro.AssistedFactory
+import dev.zacsweers.metro.AssistedInject
 
-class HomePresenter @AssistedInject constructor(
+@AssistedInject
+class HomePresenter(
     private val getHomeFeed: GetHomeFeed,
     @Assisted private val navigator: Navigator,
 ) : Presenter<HomeState> {
@@ -39,7 +40,7 @@ class HomePresenter @AssistedInject constructor(
         return state
     }
 
-    @CircuitInject(HomeScreen::class, SingletonComponent::class)
+    @CircuitInject(HomeScreen::class, AppScope::class)
     @AssistedFactory
     interface Factory {
         fun create(navigator: Navigator): HomePresenter

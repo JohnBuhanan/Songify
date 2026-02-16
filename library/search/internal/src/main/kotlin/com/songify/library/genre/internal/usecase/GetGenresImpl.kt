@@ -4,10 +4,11 @@ import androidx.compose.ui.graphics.Color
 import com.songify.library.genre.Genre
 import com.songify.library.genre.usecase.GetGenres
 import com.songify.library.search.internal.R
-import javax.inject.Inject
-import javax.inject.Singleton
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.SingleIn
 
-@Singleton
+@SingleIn(AppScope::class)
 class GetGenresImpl @Inject constructor() : GetGenres {
     override fun invoke(): List<Genre> = listOf(
         Genre("Ambient", R.drawable.genre_img_ambient, Color(0, 48, 72)),

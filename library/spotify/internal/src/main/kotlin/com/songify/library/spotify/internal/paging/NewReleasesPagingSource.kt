@@ -4,12 +4,13 @@ import com.songify.library.session.SongifySession
 import com.songify.library.spotify.internal.SpotifyService
 import com.songify.library.spotify.internal.model.toAlbumCard
 import com.songify.library.spotify.model.SpotifyModel
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.SingleIn
 import retrofit2.HttpException
 import java.io.IOException
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@SingleIn(AppScope::class)
 class NewReleasesPagingSource @Inject constructor(
     songifySession: SongifySession,
     spotifyService: SpotifyService

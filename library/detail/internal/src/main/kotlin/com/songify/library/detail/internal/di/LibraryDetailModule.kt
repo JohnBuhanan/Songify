@@ -2,13 +2,11 @@ package com.songify.library.detail.internal.di
 
 import com.songify.library.detail.internal.usecase.GetTracksImpl
 import com.songify.library.detail.usecase.GetTracks
-import dagger.Binds
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Binds
+import dev.zacsweers.metro.ContributesTo
 
-@Module
-@InstallIn(SingletonComponent::class)
+@ContributesTo(AppScope::class)
 interface LibraryDetailModule {
     @Binds
     fun bindsGetTracks(impl: GetTracksImpl): GetTracks

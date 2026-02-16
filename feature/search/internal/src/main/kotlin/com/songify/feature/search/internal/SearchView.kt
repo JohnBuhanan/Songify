@@ -8,10 +8,10 @@ import com.slack.circuitx.effects.toastEffect
 import com.songify.feature.search.SearchScreen
 import com.songify.feature.search.internal.ui.GenresGrid
 import com.songify.library.loading.LoadingBar
-import dagger.hilt.components.SingletonComponent
+import dev.zacsweers.metro.AppScope
 
 
-@CircuitInject(SearchScreen::class, SingletonComponent::class)
+@CircuitInject(SearchScreen::class, AppScope::class)
 @Composable
 fun SearchView(
     state: SearchState,
