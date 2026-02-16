@@ -5,12 +5,11 @@ import com.songify.library.premium.PremiumPlan
 import com.songify.library.premium.usecase.GetPremiumPlans
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 
 @ContributesBinding(AppScope::class)
 @SingleIn(AppScope::class)
-class GetPremiumPlansImpl @Inject constructor() : GetPremiumPlans {
+class GetPremiumPlansImpl : GetPremiumPlans {
     override suspend fun invoke(): List<PremiumPlan> = listOf(
         PremiumPlan(
             id = "premium_mini",

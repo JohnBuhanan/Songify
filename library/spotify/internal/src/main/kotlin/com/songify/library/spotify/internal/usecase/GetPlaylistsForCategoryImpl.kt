@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.Flow
 
 @ContributesBinding(AppScope::class)
 @SingleIn(AppScope::class)
-class GetPlaylistsForCategoryImpl @Inject constructor(
+class GetPlaylistsForCategoryImpl(
     private val pagingConfig: PagingConfig,
     private val songifySession: SongifySession,
     private val spotifyService: SpotifyService,

@@ -6,12 +6,11 @@ import com.songify.library.search.usecase.GetGenres
 import com.songify.library.search.internal.R
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 
 @ContributesBinding(AppScope::class)
 @SingleIn(AppScope::class)
-class GetGenresImpl @Inject constructor() : GetGenres {
+class GetGenresImpl : GetGenres {
     override fun invoke(): List<Genre> = listOf(
         Genre("Ambient", R.drawable.genre_img_ambient, Color(0, 48, 72)),
         Genre("Chill", R.drawable.genre_img_chill, Color(71, 126, 149)),
