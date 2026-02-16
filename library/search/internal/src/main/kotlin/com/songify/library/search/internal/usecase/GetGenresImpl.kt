@@ -4,10 +4,12 @@ import androidx.compose.ui.graphics.Color
 import com.songify.library.search.Genre
 import com.songify.library.search.usecase.GetGenres
 import com.songify.library.search.internal.R
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 
+@ContributesBinding(AppScope::class)
 @SingleIn(AppScope::class)
 class GetGenresImpl @Inject constructor() : GetGenres {
     override fun invoke(): List<Genre> = listOf(

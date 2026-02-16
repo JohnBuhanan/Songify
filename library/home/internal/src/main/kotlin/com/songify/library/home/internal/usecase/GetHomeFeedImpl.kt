@@ -7,12 +7,14 @@ import com.songify.library.spotify.usecase.GetCategories
 import com.songify.library.spotify.usecase.GetFeaturedPlaylists
 import com.songify.library.spotify.usecase.GetNewReleases
 import com.songify.library.spotify.usecase.GetPlaylistsForCategory
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 import retrofit2.HttpException
 import java.util.concurrent.ConcurrentHashMap
 
+@ContributesBinding(AppScope::class)
 @SingleIn(AppScope::class)
 class GetHomeFeedImpl @Inject constructor(
     private val getNewReleases: GetNewReleases,

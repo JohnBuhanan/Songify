@@ -4,9 +4,11 @@ import androidx.compose.ui.graphics.Color
 import com.songify.library.premium.PremiumPlan
 import com.songify.library.premium.usecase.GetPremiumPlans
 import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 
+@ContributesBinding(AppScope::class)
 @SingleIn(AppScope::class)
 class GetPremiumPlansImpl @Inject constructor() : GetPremiumPlans {
     override suspend fun invoke(): List<PremiumPlan> = listOf(
