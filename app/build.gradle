@@ -10,6 +10,7 @@ dependencies {
     implementation projects.library.bottomNavigation.public
     implementation projects.library.circuit.public
     implementation projects.library.metro.public
+    implementation projects.library.session.public
     implementation projects.library.theme.public
     // DO NOT ADD ANY MORE DEPENDENCIES!!!
 

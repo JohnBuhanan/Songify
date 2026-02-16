@@ -18,14 +18,11 @@ package com.songify.library.metro
 
 import android.app.Activity
 import android.app.Application
-import android.content.Context
 import dev.zacsweers.metro.AppScope
-import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.GraphExtension
 import dev.zacsweers.metro.MembersInjector
 import dev.zacsweers.metro.Multibinds
 import dev.zacsweers.metro.Provider
-import dev.zacsweers.metro.Provides
 import kotlin.reflect.KClass
 
 @GraphExtension(scope = AppScope::class)
@@ -35,12 +32,12 @@ interface AppGraph {
     val activityProviders: Map<KClass<out Activity>, Provider<Activity>>
 
 
-    @ContributesTo(MetroAppScope::class)
-    @GraphExtension.Factory
-    fun interface Factory {
-        fun create(@Provides application: Application): AppGraph
-    }
+//    @ContributesTo(MetroAppScope::class)
+//    @GraphExtension.Factory
+//    fun interface Factory {
+//        fun createAppGraph(@Provides application: Application): AppGraph
+//    }
 
-    @Provides
-    fun provideContext(application: Application): Context = application
+//    @Provides
+//    fun provideContext(application: Application): Context = application
 }

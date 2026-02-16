@@ -3,32 +3,41 @@
 package com.songify.library.circuit.di
 
 import com.slack.circuit.foundation.Circuit
+import com.slack.circuit.foundation.animation.AnimatedScreenTransform
+import com.slack.circuit.runtime.ExperimentalCircuitApi
 import com.slack.circuit.runtime.presenter.Presenter
+import com.slack.circuit.runtime.screen.Screen
 import com.slack.circuit.runtime.ui.Ui
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Multibinds
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
+import kotlin.reflect.KClass
 
+@OptIn(ExperimentalCircuitApi::class)
 @ContributesTo(AppScope::class)
 interface CircuitModule {
-    companion object {
-        @SingleIn(AppScope::class)
-        @Provides
-        fun provideCircuit(
-            presenterFactories: Set<Presenter.Factory>,
-            uiFactories: Set<Ui.Factory>,
-        ): Circuit {
-            return Circuit.Builder()
-                .apply {
-                    for (factory in presenterFactories) {
-                        addPresenterFactory(factory)
-                    }
-                    for (factory in uiFactories) {
-                        addUiFactory(factory)
-                    }
-                }
-                .build()
-        }
+    @Multibinds
+    fun presenterFactories(): Set<Presenter.Factory>
+
+    @Multibinds
+    fun viewFactories(): Set<Ui.Factory>
+
+    @Multibinds(allowEmpty = true)
+    fun animatedScreenTransforms(): Map<KClass<out Screen>, AnimatedScreenTransform>
+
+    @SingleIn(AppScope::class)
+    @Provides
+    fun provideCircuit(
+        presenterFactories: @JvmSuppressWildcards Set<Presenter.Factory>,
+        uiFactories: @JvmSuppressWildcards Set<Ui.Factory>,
+        animatedScreenTransforms: @JvmSuppressWildcards Map<KClass<out Screen>, AnimatedScreenTransform>,
+    ): Circuit {
+        return Circuit.Builder()
+            .addPresenterFactories(presenterFactories)
+            .addUiFactories(uiFactories)
+            .addAnimatedScreenTransforms(animatedScreenTransforms)
+            .build()
     }
 }

@@ -5,12 +5,14 @@ import com.songify.library.spotify.internal.SpotifyService
 import com.songify.library.spotify.internal.model.getTracks
 import com.songify.library.spotify.model.SpotifyModel
 import com.songify.library.spotify.usecase.GetTracksByAlbumId
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 import retrofit2.HttpException
 import java.io.IOException
 
+@ContributesBinding(AppScope::class)
 @SingleIn(AppScope::class)
 class GetTracksByAlbumIdImpl @Inject constructor(
     private val songifySession: SongifySession,

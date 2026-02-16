@@ -8,6 +8,11 @@ import dev.zacsweers.metro.createGraph
 
 @Keep
 class GeneratedMetroAppComponentFactory : MetroAppComponentFactory() {
-    override fun createAppGraph(app: Application): AppGraph =
-        (createGraph<MetroGraph>() as AppGraph.Factory).create(app)
+    override fun createAppGraph(app: Application): AppGraph {
+        val metroGraph = createGraph<MetroGraph>()
+//        val appGraph = (metroGraph as AppGraph.Factory).createAppGraph(app)
+        val appGraph = metroGraph.appGraph
+
+        return appGraph
+    }
 }
